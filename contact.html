@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="navtag.css">
+        <script>
+            function validate(){
+  var name = document.getElementById("name").value;
+  var subject = document.getElementById("subject").value;
+  var phone = document.getElementById("phone").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+  var error_message = document.getElementById("error_message");
+  
+  error_message.style.padding = "10px";
+  
+  var text;
+  if(name.length < 2){
+    window.alert("Please Enter valid Name");
+    return false;
+  }
+  if(subject.length < 4){
+    window.alert("Please Enter Correct Subject");
+    return false;
+  }
+  if(isNaN(phone) || phone.length != 10){
+    window.alert("Please Enter valid Phone Number");
+    error_message.innerHTML = text;
+    return false;
+  }
+  if(email.indexOf("@") == -1 || email.length < 6){
+    window.alert("Please Enter valid Email");
+    return false;
+  }
+  if(message.length <= 20){
+    window.alert("Please Enter More Than 20 Characters");
+    return false;
+  }
+  alert("Form Submitted Successfully!");
+  return true;
+}
+        </script>
+        <style>
+            h1{
+                color: #464444;
+font-family: arial, sans-serif;
+font-size: 30px;
+font-weight: bold;
+text-align: center;
+		}
+    h2{
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 50px;
+      font-weight: bolder;
+      text-align: center;
+    }
+    
+        </style>
+        <title> Contact Us</title>
+    </head>
+    <body background="D:\geu.png">
+        <center> <img src="D:\geulogo.png" alt="geu" class="center"></center>
+        <center> <img src="C:\Users\Lenovo\Downloads\envi.png" alt="login"> </center> 
+    <hr>
+    <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="formval.html">New Entry</a>
+      <a href="contact.html">Contact Us</a>
+       <a href="login.html"><div id="right">Login / Signup </a> </div>
+    </div>
+
+    <p> Fill in your contact informtaion , we will reach back to you within 2-12 hours.</p>
+
+    <div class="wrapper">
+        <center><h2>Contact us</h2></center><br>
+        <div id="error_message"> 
+        </div>
+        <form action="" id="myform" onsubmit = "return validate();">
+          <div class="input_field">
+            <center> <input type="text" placeholder="Name" id="name">
+          </div><br></center>
+          <div class="input_field">
+              <center><input type="text" placeholder="Subject" id="subject">
+          </div><br></center>
+          <div class="input_field">
+              <center><input type="text" placeholder="Phone" id="phone">
+          </div><br></center>
+          <div class="input_field">
+              <center><input type="text" placeholder="Email" id="email">
+          </div><br></center>
+          <div class="input_field">
+              <center><textarea placeholder="Message" id="message"></textarea>
+          </div><br></center>
+          <div class="btn">
+              <center><input type="submit"> </center>
+          </div><br>
+        </form>
+      </div>
+    </center>
+    </body>
+</html>

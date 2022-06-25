@@ -1,0 +1,135 @@
+<html>
+	<head>
+		
+		<script>
+			function formvalidate() {
+				var name =
+					document.forms["RegForm"]["Name"];
+				var loca =
+					document.forms["RegForm"]["loca"];
+				var phone =
+					document.forms["RegForm"]["phone"];
+				var what =
+					document.forms["RegForm"]["Subject"];
+				var item =
+					document.forms["RegForm"]["item"];
+				var address =
+					document.forms["RegForm"]["Address"];
+
+				if (name.value == "") {
+					window.alert("Please enter your name.");
+					name.focus();
+					return false;
+				}
+
+				if (loca.value == "") {
+					window.alert("Please enter valid Location of Shipment");
+					loca.focus();
+					return false;
+				}
+                if (Address.value == "") {
+					window.alert("Please enter a valid Email Address");
+					Address.focus();
+					return false;
+				}
+				
+
+				if (phone.value == "") {
+					window.alert("Please enter your telephone number.");
+					phone.focus();
+					return false;
+				}
+
+				if (item.value == "") {
+					window.alert("Please enter a valid Item ID");
+					item.focus();
+					return false;
+				}
+
+				return true;
+			}
+		</script>
+
+		<style>
+			div {
+				box-sizing: border-box;
+				width: 100%;
+				border: 100px solid black;
+				float: left;
+				align-content: center;
+				align-items: center;
+			}
+
+			form {
+				margin: 0 auto;
+				width: 600px;
+			}
+            h1{
+                color: #000000;}
+                p{
+                    color: white;
+                }
+				td{
+					font-weight: bold;
+					font-family: 'Times New Roman', Times, serif;
+				}
+		</style>
+	</head>
+
+	<body background="D:\geu.png">
+        <center> <img src="D:\geulogo.png" alt="geu" class="center"> </center> <br>
+		<center> <img src="C:\Users\Lenovo\Downloads\envi.png" alt="login"> </center> 
+		<form name="RegForm" action="submit.php" onsubmit="return formvalidate()" method="post">
+			<table>
+			<tr>
+			 <td>Name:</td> 
+			 <td><input type="text" name="Name" /></td>
+			<br />
+			<tr>
+		    <td>Location of Shipment:</td> 
+			<td><input type="text" name="loca" /></td>
+		    </tr>
+			<br />
+			<tr>
+			<td>E-mail Address:</td> 
+			<td><input type="text"  name="Address" /></td>
+		    </tr>
+			<br />
+			<tr>
+			<td>Item ID:</td> 
+			<td><input type="text"  name="item" /></td>
+		    </tr>
+			<br />
+			<tr>
+			<td>Telephone: </td>
+			<td><input type="text"  name="phone" /></td>
+		    </tr>
+			<br />
+
+			<tr>
+				<td>Select The Product Type</td>
+				<td><select type="text" value="" name="Type">
+					<option>Household</option>
+					<option>Autoparts and Spareparts</option>
+					<option>Medical</option>
+					<option>Sports and Recreation</option>
+					<option>Academic Products</option>
+				</select></td>
+			</tr>
+			<br />
+			<br />
+			<tr>
+			<td>Additional Details:</td>
+		    <td><textarea cols="55"name="Comment"> </textarea></td>
+		   </tr>
+			<tr>
+				<td><input type="submit"
+					value="Send" name="Submit" onclick="formvalidate()" /></td>
+				<td><input type="reset"
+					value="Reset" name="Reset" /></td>
+		    </tr>
+		</form>
+	</table>
+	</body>
+</html>
+
